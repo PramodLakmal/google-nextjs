@@ -14,7 +14,10 @@ export default function WebSearchResults({ results }) {
         <div key={result.link} className="max-w-xl mb-8">
           <div className="group flex flex-col">
             <Link href={result.link}>{result.formattedUrl}</Link>
-            <Link href={result.link} className="group-hover:underline decoration-blue-800 text-xl truncate font-medium text-blue-800">
+            <Link
+              href={result.link}
+              className="group-hover:underline decoration-blue-800 text-xl truncate font-medium text-blue-800"
+            >
               {result.title}
             </Link>
           </div>

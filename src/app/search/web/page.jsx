@@ -3,7 +3,8 @@ import Link from "next/link";
 import React from "react";
 
 export default async function WebSearchPage({ searchParams }) {
-  const startIndex = searchParams.start || '1';
+  const startIndex = searchParams.start || "1";
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}'}&start=${startIndex}`
   );
@@ -19,7 +20,7 @@ export default async function WebSearchPage({ searchParams }) {
           No results for {searchParams.searchTerm}
         </h1>
         <p className="text-lg">
-          Try searching the web or images for something else {" "}
+          Try searching the web or images for something else{" "}
           <Link href="/" className="text-blue-500">
             Home
           </Link>
@@ -28,7 +29,5 @@ export default async function WebSearchPage({ searchParams }) {
     );
   }
 
-  return (
-    <div>{results &&  <WebSearchResults results={data}/>}</div>
-  );
+  return <div>{results && <WebSearchResults results={data} />}</div>;
 }

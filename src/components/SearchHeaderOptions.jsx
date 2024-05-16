@@ -23,7 +23,7 @@ export default function SearchHeaderOptions() {
           pathname === "/search/web" && "!text-blue-600 !border-blue-600"
         }`}
       >
-        <AiOutlineSearch className='text-md'/>
+        <AiOutlineSearch className="text-md" />
         <p>All</p>
       </div>
       <div
